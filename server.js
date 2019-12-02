@@ -36,8 +36,9 @@ app.post('/register', (req, res) =>{register.handleRegister(req, res, db, bcrypt
 // LOGGIN IN
 app.get('/profile/:id', (req, res) => {profile.handleProfileGet(req, res, db)})
 
-// making an update to an existing user
+// MAKING AN UPDATE to an existing user
 app.put('/image', (req, res) => {image.handleImagePut(req, res, db)})
+app.post('/imageurl', (req, res) => { image.handleApiCall(req, res)})
 
 app.listen(3000, ()=>{
     console.log('app is running on port 3000');
